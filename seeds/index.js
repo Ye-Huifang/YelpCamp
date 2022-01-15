@@ -1,3 +1,5 @@
+
+
 const mongoose = require('mongoose');
 const cities = require('./cities');
 const { places, descriptors } = require('./seedHelpers');
@@ -28,9 +30,20 @@ const seedDB = async () => {
             author: '61e1ae5018d0e182cb0df8c2',
             location: `${cities[random1000].city}, ${cities[random1000].state}`,
             title: `${sample(descriptors)} ${sample(places)}`,
-            image: 'https://source.unsplash.com/collection/483251',
             description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dolores vero perferendis laudantium, consequuntur voluptatibus nulla architecto, sit soluta esse iure sed labore ipsam a cum nihil atque molestiae deserunt!',
-            price
+            price,
+            // image: 'https://source.unsplash.com/collection/483251',
+
+            images: [
+                {
+                    url: 'https://res.cloudinary.com/dmzuriozi/image/upload/v1642218873/YelpCamp/espw9atfz2sfwc0btivu.jpg',
+                    filename: 'YelpCamp/espw9atfz2sfwc0btivu'
+                },
+                {
+                    url: 'https://res.cloudinary.com/dmzuriozi/image/upload/v1642218873/YelpCamp/donwd3vxmmr7yhiki6dv.jpg',
+                    filename: 'YelpCamp/donwd3vxmmr7yhiki6dv'
+                }
+            ]
         })
         await camp.save();
     }
